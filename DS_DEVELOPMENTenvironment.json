@@ -1,0 +1,22 @@
+{
+  "id": "52b3387b-a6a3-5ad9-8604-442dbf96d050",
+  "name": "DROPSUITE_DEVELOPMENT",
+  "values": [
+    {
+      "enabled": true,
+      "key": "hosts",
+      "value": "https://resellers-dev.dropmyemail.com/",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "X-Reseller-Token",
+      "value": "778280ab-e4ae-450f-8920-9d732851c8e8",
+      "type": "text"
+    }
+  ],
+  "timestamp": 1511403639292,
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2017-11-23T02:32:02.700Z",
+  "_postman_exported_using": "Postman/5.3.2"
+}
