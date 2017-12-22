@@ -4641,7 +4641,7 @@
 										"type": "text/javascript",
 										"exec": [
 											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 200;",
-											"tests[\"Response time \" + responseTime + \"ms is less than 10000ms\"] = responseTime < 10000;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 10000ms\"] = responseTime < 10000;"
 										]
 									}
 								}
