@@ -594,7 +594,7 @@
 											"description": "mandatory",
 											"key": "email",
 											"type": "text",
-											"value": "prasetyanto.archiver01+{{$randomInt}}@gmail.com"
+											"value": "prasetyanto.archiver01+{{$timestamp}}@gmail.com"
 										},
 										{
 											"description": "mandatory for backup and archive",
@@ -630,7 +630,7 @@
 											"description": "mandatory for backup and archive",
 											"key": "organization_attributes[name]",
 											"type": "text",
-											"value": "api-archiver{{$randomInt}}"
+											"value": "api-archiver{{$timestamp}}"
 										},
 										{
 											"description": "",
@@ -728,7 +728,7 @@
 											"description": "mandatory",
 											"key": "email",
 											"type": "text",
-											"value": "prasetyanto.backup01+{{$randomInt}}@gmail.com"
+											"value": "prasetyanto.backup01+{{$timestamp}}@gmail.com"
 										},
 										{
 											"description": "mandatory",
@@ -764,13 +764,13 @@
 											"description": "mandatory for backup and archive",
 											"key": "organization_attributes[name]",
 											"type": "text",
-											"value": "api-backup-{{$randomInt}}"
+											"value": "api-backup-{{$timestamp}}"
 										},
 										{
 											"description": "",
 											"key": "external_id",
 											"type": "text",
-											"value": "api{{$randomInt}}",
+											"value": "api{{$timestamp}}",
 											"disabled": true
 										}
 									]
@@ -861,7 +861,7 @@
 											"description": "mandatory",
 											"key": "email",
 											"type": "text",
-											"value": "prasetyanto.personal01+{{$randomInt}}@gmail.com"
+											"value": "prasetyanto.personal01+{{$timestamp}}@gmail.com"
 										},
 										{
 											"description": "mandatory",
@@ -905,7 +905,7 @@
 											"description": "",
 											"key": "external_id",
 											"type": "text",
-											"value": "api{{$randomInt}}",
+											"value": "api{{$timestamp}}",
 											"disabled": true
 										}
 									]
@@ -2941,7 +2941,7 @@
 											"description": "string",
 											"key": "external_id",
 											"type": "text",
-											"value": "archiver_{{$randomInt}}"
+											"value": "archiver_{{$timestamp}}"
 										}
 									]
 								},
@@ -3035,7 +3035,7 @@
 											"description": "string",
 											"key": "external_id",
 											"type": "text",
-											"value": "backup_{{$randomInt}}"
+											"value": "backup_{{$timestamp}}"
 										}
 									]
 								},
@@ -3129,7 +3129,7 @@
 											"description": "string",
 											"key": "external_id",
 											"type": "text",
-											"value": "Personal_{{$randomInt}}"
+											"value": "Personal_{{$timestamp}}"
 										}
 									]
 								},
@@ -3225,7 +3225,7 @@
 								],
 								"body": {},
 								"url": {
-									"raw": "{{hosts}}/api/accounts?email=prasetyanto.dheka01%2B{{$randomInt}}%40gmail.com&password=1234asdF",
+									"raw": "{{hosts}}/api/accounts?email=prasetyanto.dheka01%2B{{$timestamp}}%40gmail.com&password=1234asdF",
 									"host": [
 										"{{hosts}}"
 									],
@@ -3236,7 +3236,7 @@
 									"query": [
 										{
 											"key": "email",
-											"value": "prasetyanto.dheka01%2B{{$randomInt}}%40gmail.com",
+											"value": "prasetyanto.dheka01%2B{{$timestamp}}%40gmail.com",
 											"equals": true
 										},
 										{
@@ -3320,7 +3320,7 @@
 								],
 								"body": {},
 								"url": {
-									"raw": "{{hosts}}/api/accounts?email=prasetyanto.dheka01%2B{{$randomInt}}%40gmail.com&password=1234asdF",
+									"raw": "{{hosts}}/api/accounts?email=prasetyanto.dheka01%2B{{$timestamp}}%40gmail.com&password=1234asdF",
 									"host": [
 										"{{hosts}}"
 									],
@@ -3331,7 +3331,7 @@
 									"query": [
 										{
 											"key": "email",
-											"value": "prasetyanto.dheka01%2B{{$randomInt}}%40gmail.com",
+											"value": "prasetyanto.dheka01%2B{{$timestamp}}%40gmail.com",
 											"equals": true
 										},
 										{
@@ -3415,7 +3415,7 @@
 								],
 								"body": {},
 								"url": {
-									"raw": "{{hosts}}/api/accounts?email=prasetyanto.dheka01%2B{{$randomInt}}%40gmail.com&password=1234asdF",
+									"raw": "{{hosts}}/api/accounts?email=prasetyanto.dheka01%2B{{$timestamp}}%40gmail.com&password=1234asdF",
 									"host": [
 										"{{hosts}}"
 									],
@@ -3426,7 +3426,7 @@
 									"query": [
 										{
 											"key": "email",
-											"value": "prasetyanto.dheka01%2B{{$randomInt}}%40gmail.com",
+											"value": "prasetyanto.dheka01%2B{{$timestamp}}%40gmail.com",
 											"equals": true
 										},
 										{
