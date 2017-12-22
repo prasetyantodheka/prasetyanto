@@ -1,0 +1,172 @@
+{
+  "id": "7b45e787-125b-5693-02d7-0abb38620ea4",
+  "name": "DROPSUITE_SANDBOX",
+  "values": [
+    {
+      "enabled": true,
+      "key": "hosts",
+      "value": "https://sandbox.dropmyemail.com",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "X-Reseller-Token",
+      "value": "54301965-ae1b-4f24-a2c6-1fce17ca2b95",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Id-Email-Archiver",
+      "value": "1157",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "X-Access-Token-Reseller",
+      "value": "a08e78f1-5538-4f66-abc5-8e4c0b66338e",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Id-Email-Backup",
+      "value": "1117",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Id-Email-Personal",
+      "value": "1118",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "X-Access-Token-Archiver",
+      "value": "c7eeb99b-bfa3-4254-bed3-9c2da7d26c91",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "X-Access-Token-Backup",
+      "value": "4c0cb07e-a02a-47ae-af88-149935ac54aa",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Id-Email-Backup-Delete",
+      "value": "987",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "X-Reseller-Token-1",
+      "value": "202171e9-323d-4788-ab65-6148a2277d93",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "X-Access-Token-Uol",
+      "value": "459edd2c-d1cd-4618-8fc2-ddb4b3dab874",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Id-Plan-Backup",
+      "value": "135",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Id-Plan-Archiver",
+      "value": "136",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Id-Plan-Personal",
+      "value": "134",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Id-User-Archiver",
+      "value": "1195",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Id-User-Backup",
+      "value": "1196",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Id-User-Personal",
+      "value": "asd",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Email-User-Archiver",
+      "value": "prasetyanto.archiver01+635@gmail.com",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Email-User-Backup",
+      "value": "prasetyanto.backup01+850@gmail.com",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Email-User-Personal",
+      "value": "qwe",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Id-Account-Backup",
+      "value": "1012",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Email-Account-Backup",
+      "value": "prasetyanto.dheka01+647@gmail.com",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Id-Account-Archiver",
+      "value": "1011",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Email-Account-Archiver",
+      "value": "prasetyanto.dheka01+315@gmail.com",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Id-Account-Personal",
+      "value": "1231",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Email-Account-Personal",
+      "value": "23142",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "X-Access-Token-Personal",
+      "value": "3424234234234",
+      "type": "text"
+    }
+  ],
+  "timestamp": 1513876806405,
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2017-12-21T17:23:42.020Z",
+  "_postman_exported_using": "Postman/5.3.2"
+}
