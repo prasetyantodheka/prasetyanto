@@ -936,7 +936,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"",
 											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 200;",
-											"tests[\"Response time \" + responseTime + \"ms is less than 10000ms\"] = responseTime < 10000;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 10000ms\"] = responseTime < 50000;",
 											"",
 											"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
 											"tests[\"Body matches string 'email' is \" + responseBody.has(\"email\")] = responseBody.has(\"email\");",
@@ -3531,7 +3531,7 @@
 										"type": "text/javascript",
 										"exec": [
 											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 200;",
-											"tests[\"Response time \" + responseTime + \"ms is less than 10000ms\"] = responseTime < 10000;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 10000ms\"] = responseTime < 20000;",
 											"",
 											"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
 											"tests[\"Body matches string 'email' is \" + responseBody.has(\"email\")] = responseBody.has(\"email\");",
