@@ -1,6 +1,6 @@
 {
-  "id": "7b45e787-125b-5693-02d7-0abb38620ea4",
-  "name": "DROPSUITE_SANDBOX",
+  "id": "499d46de-d36f-303c-ef30-52744fb0c333",
+  "name": "DROPSUITE_SANDBOX_NEWMAN",
   "values": [
     {
       "enabled": true,
@@ -41,13 +41,13 @@
     {
       "enabled": true,
       "key": "X-Access-Token-Archiver",
-      "value": "c7eeb99b-bfa3-4254-bed3-9c2da7d26c91",
+      "value": "75e18130-d52a-4f02-aab4-0a7059b22485",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "X-Access-Token-Backup",
-      "value": "4c0cb07e-a02a-47ae-af88-149935ac54aa",
+      "value": "aadf9a82-c9a6-40dd-98f9-8f259039c749",
       "type": "text"
     },
     {
@@ -71,97 +71,73 @@
     {
       "enabled": true,
       "key": "Id-Plan-Backup",
-      "value": "135",
+      "value": "321",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "Id-Plan-Archiver",
-      "value": "136",
+      "value": "322",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "Id-Plan-Personal",
-      "value": "134",
+      "value": "320",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "Id-User-Archiver",
-      "value": "1195",
+      "value": "1603",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "Id-User-Backup",
-      "value": "1196",
+      "value": "1604",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "Id-User-Personal",
-      "value": "asd",
+      "value": "1605",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "Email-User-Archiver",
-      "value": "prasetyanto.archiver01+635@gmail.com",
+      "value": "prasetyanto.archiver01+1516001415@gmail.com",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "Email-User-Backup",
-      "value": "prasetyanto.backup01+850@gmail.com",
+      "value": "prasetyanto.backup01+1516001416@gmail.com",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "Email-User-Personal",
-      "value": "qwe",
+      "value": "prasetyanto.personal01+1516001416@gmail.com",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "Id-Account-Backup",
-      "value": "1012",
+      "value": "1206",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "Email-Account-Backup",
-      "value": "prasetyanto.dheka01+647@gmail.com",
-      "type": "text"
-    },
-    {
-      "enabled": true,
-      "key": "Id-Account-Archiver",
-      "value": "1011",
-      "type": "text"
-    },
-    {
-      "enabled": true,
-      "key": "Email-Account-Archiver",
-      "value": "prasetyanto.dheka01+315@gmail.com",
-      "type": "text"
-    },
-    {
-      "enabled": true,
-      "key": "Id-Account-Personal",
-      "value": "1231",
-      "type": "text"
-    },
-    {
-      "enabled": true,
-      "key": "Email-Account-Personal",
-      "value": "23142",
+      "value": "prasetyanto.dheka01+1516001422@gmail.com",
       "type": "text"
     },
     {
       "enabled": true,
       "key": "X-Access-Token-Personal",
-      "value": "3424234234234",
+      "value": "50c5d3df-4058-49a7-b0ca-cdf367753199",
       "type": "text"
     },
     {
@@ -169,10 +145,40 @@
       "key": "Static-Plan",
       "value": "131",
       "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "X-Access-Token-Backup-Statis",
+      "value": "09ab026a-9d32-4f7d-a45a-5217412fdd82",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Id-Account-Archiver",
+      "value": "1207",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Email-Account-Archiver",
+      "value": "prasetyanto.dheka01+1516001434@gmail.com",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Id-Account-Personal",
+      "value": "1208",
+      "type": "text"
+    },
+    {
+      "enabled": true,
+      "key": "Email-Account-Personal",
+      "value": "prasetyanto.dheka01+1516001449@gmail.com",
+      "type": "text"
     }
   ],
-  "timestamp": 1513876806405,
+  "timestamp": 1516001968114,
   "_postman_variable_scope": "environment",
-  "_postman_exported_at": "2017-12-21T17:23:42.020Z",
+  "_postman_exported_at": "2018-01-15T07:40:36.824Z",
   "_postman_exported_using": "Postman/5.3.2"
 }

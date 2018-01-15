@@ -1,7 +1,7 @@
 {
 	"info": {
-		"name": "step_by_step_DME",
-		"_postman_id": "b968f865-40d2-7851-429c-76d93ba21e30",
+		"name": "step_by_step_DME_newman",
+		"_postman_id": "36da6b5b-b3ff-208d-bef0-fddd803c0ea8",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -40,7 +40,10 @@
 								"value": "{{X-Reseller-Token}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{hosts}}/api/countries",
 							"host": [
@@ -85,7 +88,10 @@
 								"value": "{{X-Reseller-Token}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{hosts}}/api/timezones",
 							"host": [
@@ -130,7 +136,10 @@
 								"value": "{{X-Reseller-Token}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{hosts}}/api/locales",
 							"host": [
@@ -179,7 +188,8 @@
 											"",
 											"var jsonData = JSON.parse(responseBody);",
 											"var res = typeof(jsonData) === \"object\";",
-											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; "
+											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
+											"console.log(responseBody);"
 										]
 									}
 								}
@@ -202,38 +212,32 @@
 										{
 											"key": "name",
 											"value": "res-personal-api",
-											"type": "text",
-											"description": ""
+											"type": "text"
 										},
 										{
 											"key": "product_type",
 											"value": "res_personal",
-											"type": "text",
-											"description": ""
+											"type": "text"
 										},
 										{
 											"key": "amount",
 											"value": "1.0",
-											"type": "text",
-											"description": ""
+											"type": "text"
 										},
 										{
 											"key": "data_storage",
 											"value": "6",
-											"type": "text",
-											"description": ""
+											"type": "text"
 										},
 										{
 											"key": "currency",
 											"value": "USD",
-											"type": "text",
-											"description": ""
+											"type": "text"
 										},
 										{
 											"key": "periodicity",
 											"value": "monthly",
-											"type": "text",
-											"description": ""
+											"type": "text"
 										}
 									]
 								},
@@ -276,7 +280,8 @@
 											"",
 											"var jsonData = JSON.parse(responseBody);",
 											"var res = typeof(jsonData) === \"object\";",
-											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; "
+											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res;",
+											"console.log(responseBody);"
 										]
 									}
 								}
@@ -297,37 +302,31 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"description": "",
 											"key": "name",
 											"type": "text",
 											"value": "API_backup"
 										},
 										{
-											"description": "",
 											"key": "product_type",
 											"type": "text",
 											"value": "res_backup"
 										},
 										{
-											"description": "",
 											"key": "amount",
 											"type": "text",
 											"value": "1.0"
 										},
 										{
-											"description": "",
 											"key": "data_storage",
 											"type": "text",
 											"value": "777"
 										},
 										{
-											"description": "",
 											"key": "currency",
 											"type": "text",
 											"value": "USD"
 										},
 										{
-											"description": "",
 											"key": "periodicity",
 											"type": "text",
 											"value": "monthly"
@@ -373,7 +372,8 @@
 											"",
 											"var jsonData = JSON.parse(responseBody);",
 											"var res = typeof(jsonData) === \"object\";",
-											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; "
+											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
+											"console.log(responseBody);"
 										]
 									}
 								}
@@ -396,38 +396,32 @@
 										{
 											"key": "name",
 											"value": "API_Archiver",
-											"type": "text",
-											"description": ""
+											"type": "text"
 										},
 										{
 											"key": "product_type",
 											"value": "res_archive",
-											"type": "text",
-											"description": ""
+											"type": "text"
 										},
 										{
 											"key": "amount",
 											"value": "1.0",
-											"type": "text",
-											"description": ""
+											"type": "text"
 										},
 										{
 											"key": "data_storage",
 											"value": "777",
-											"type": "text",
-											"description": ""
+											"type": "text"
 										},
 										{
 											"key": "currency",
 											"value": "USD",
-											"type": "text",
-											"description": ""
+											"type": "text"
 										},
 										{
 											"key": "periodicity",
 											"value": "monthly",
-											"type": "text",
-											"description": ""
+											"type": "text"
 										}
 									]
 								},
@@ -472,6 +466,7 @@
 											"tests[\"Theres new plans personal created \"] = jsonData.id = id_personal;",
 											"tests[\"Theres new plans backup created \"] = jsonData.id = id_backup;",
 											"tests[\"Theres new plans archiver created \"] = jsonData.id = id_archiver;",
+											"",
 											"",
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; "
@@ -525,7 +520,6 @@
 				},
 				{
 					"name": "users",
-					"description": "",
 					"item": [
 						{
 							"name": "POST /api/users - archiver",
@@ -568,6 +562,7 @@
 											"var jsonData = JSON.parse(responseBody);",
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
+											"console.log(responseBody);",
 											"",
 											"",
 											""
@@ -633,10 +628,9 @@
 											"value": "api-archiver{{$timestamp}}"
 										},
 										{
-											"description": "",
 											"key": "external_id",
 											"type": "text",
-											"value": "api 1",
+											"value": "archiver_725",
 											"disabled": true
 										}
 									]
@@ -697,6 +691,7 @@
 											"var jsonData = JSON.parse(responseBody);",
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
+											"console.log(responseBody);",
 											"",
 											"",
 											""
@@ -767,7 +762,6 @@
 											"value": "api-backup-{{$timestamp}}"
 										},
 										{
-											"description": "",
 											"key": "external_id",
 											"type": "text",
 											"value": "api{{$randomInt}}",
@@ -831,7 +825,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
-											"",
+											"console.log(responseBody);",
 											""
 										]
 									}
@@ -902,7 +896,6 @@
 											"disabled": true
 										},
 										{
-											"description": "",
 											"key": "external_id",
 											"type": "text",
 											"value": "api{{$randomInt}}",
@@ -911,7 +904,6 @@
 										{
 											"key": "send_sign_in_details",
 											"value": "true",
-											"description": "",
 											"type": "text"
 										}
 									]
@@ -1051,7 +1043,7 @@
 											"",
 											"",
 											"var jsonData = JSON.parse(responseBody);",
-											"tests[\"email is prasetyanto.archiver01+72@gmail.com is \" + jsonData.email.has(\"prasetyanto.archiver01+72@gmail.com\")] = jsonData.email.has(\"prasetyanto.archiver01+72@gmail.com\")",
+											"tests[\"email is prasetyanto.archiver01+1515999453@gmail.com is \" + jsonData.email.has(\"prasetyanto.archiver01+1515999453@gmail.com\")] = jsonData.email.has(\"prasetyanto.archiver01+1515999453@gmail.com\")",
 											"",
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
@@ -1090,7 +1082,7 @@
 									]
 								},
 								"url": {
-									"raw": "{{hosts}}/api/users?email=prasetyanto.archiver01%2B72%40gmail.com",
+									"raw": "{{hosts}}/api/users?email=prasetyanto.archiver01%2B1515999453%40gmail.com",
 									"host": [
 										"{{hosts}}"
 									],
@@ -1101,7 +1093,7 @@
 									"query": [
 										{
 											"key": "email",
-											"value": "prasetyanto.archiver01%2B72%40gmail.com",
+											"value": "prasetyanto.archiver01%2B1515999453%40gmail.com",
 											"equals": true
 										}
 									]
@@ -1144,7 +1136,7 @@
 											"",
 											"",
 											"var jsonData = JSON.parse(responseBody);",
-											"tests[\"email is prasetyanto.archiver01+72@gmail.com is \" + jsonData.email.has(\"prasetyanto.archiver01+72@gmail.com\")] = jsonData.email.has(\"prasetyanto.archiver01+72@gmail.com\")",
+											"tests[\"email is prasetyanto.archiver01+1515999889@gmail.com is \" + jsonData.email.has(\"prasetyanto.archiver01+1515999889@gmail.com.com\")] = jsonData.email.has(\"prasetyanto.archiver01+1515999889@gmail.com\")",
 											"",
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
@@ -1183,7 +1175,7 @@
 									]
 								},
 								"url": {
-									"raw": "{{hosts}}/api/users?external_id=archiver_724",
+									"raw": "{{hosts}}/api/users?external_id=archiver_725",
 									"host": [
 										"{{hosts}}"
 									],
@@ -1194,7 +1186,7 @@
 									"query": [
 										{
 											"key": "external_id",
-											"value": "archiver_724",
+											"value": "archiver_725",
 											"equals": true
 										}
 									]
@@ -1228,7 +1220,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
-											"",
+											"console.log(responseBody);",
 											""
 										]
 									}
@@ -1311,7 +1303,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
-											"",
+											"console.log(responseBody);",
 											""
 										]
 									}
@@ -1395,7 +1387,7 @@
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
 											"",
-											""
+											"console.log(responseBody);"
 										]
 									}
 								}
@@ -1491,7 +1483,7 @@
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
 											"",
-											""
+											"console.log(responseBody);"
 										]
 									}
 								}
@@ -1562,7 +1554,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
-											"",
+											"console.log(responseBody);",
 											""
 										]
 									}
@@ -1634,7 +1626,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
-											"",
+											"console.log(responseBody);",
 											""
 										]
 									}
@@ -1706,7 +1698,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
-											"",
+											"console.log(responseBody);",
 											""
 										]
 									}
@@ -1779,7 +1771,7 @@
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
 											"",
-											""
+											"console.log(responseBody);"
 										]
 									}
 								}
@@ -1850,7 +1842,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
-											"",
+											"console.log(responseBody);",
 											""
 										]
 									}
@@ -2122,7 +2114,7 @@
 											"var jsonData = JSON.parse(responseBody);",
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
-											"",
+											"console.log(responseBody);",
 											"",
 											""
 										]
@@ -2208,7 +2200,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
-											"",
+											"console.log(responseBody);",
 											""
 										]
 									}
@@ -2293,7 +2285,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
-											"",
+											"console.log(responseBody);",
 											""
 										]
 									}
@@ -2370,7 +2362,7 @@
 											"",
 											"tests[\"Body matches string 'authentication' is \" + responseBody.has(\"authentication_token\")] = responseBody.has(\"authentication_token\");",
 											"",
-											""
+											"console.log(responseBody);"
 										]
 									}
 								}
@@ -2389,7 +2381,7 @@
 										{
 											"key": "email",
 											"type": "text",
-											"value": "prasetyanto.archiver01+921@gmail.com"
+											"value": "prasetyanto.archiver01+1515808824@gmail.com"
 										},
 										{
 											"key": "password",
@@ -2427,7 +2419,7 @@
 											"",
 											"tests[\"Body matches string 'authentication' is \" + responseBody.has(\"authentication_token\")] = responseBody.has(\"authentication_token\");",
 											"",
-											""
+											"console.log(responseBody);"
 										]
 									}
 								}
@@ -2446,7 +2438,7 @@
 										{
 											"key": "email",
 											"type": "text",
-											"value": "prasetyanto.backup01+9@gmail.com"
+											"value": "prasetyanto.backup01+1515808827@gmail.com"
 										},
 										{
 											"key": "password",
@@ -2484,7 +2476,7 @@
 											"",
 											"tests[\"Body matches string 'authentication' is \" + responseBody.has(\"authentication_token\")] = responseBody.has(\"authentication_token\");",
 											"",
-											""
+											"console.log(responseBody);"
 										]
 									}
 								}
@@ -2503,7 +2495,7 @@
 										{
 											"key": "email",
 											"type": "text",
-											"value": "prasetyanto.personal01+617@gmail.com"
+											"value": "prasetyanto.personal01+1515999315@gmail.com"
 										},
 										{
 											"key": "password",
@@ -2541,7 +2533,7 @@
 											"",
 											"tests[\"Body matches string 'redirect_url' is \" + responseBody.has(\"redirect_url\")] = responseBody.has(\"redirect_url\");",
 											"",
-											""
+											"console.log(responseBody);"
 										]
 									}
 								}
@@ -2602,7 +2594,7 @@
 											"",
 											"tests[\"Body matches string 'redirect_url' is \" + responseBody.has(\"redirect_url\")] = responseBody.has(\"redirect_url\");",
 											"",
-											""
+											"console.log(responseBody);"
 										]
 									}
 								}
@@ -2663,7 +2655,7 @@
 											"",
 											"tests[\"Body matches string 'redirect_url' is \" + responseBody.has(\"redirect_url\")] = responseBody.has(\"redirect_url\");",
 											"",
-											""
+											"console.log(responseBody);"
 										]
 									}
 								}
@@ -2747,7 +2739,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
-											"",
+											"console.log(responseBody);",
 											""
 										]
 									}
@@ -2841,7 +2833,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
-											"",
+											"console.log(responseBody);",
 											""
 										]
 									}
@@ -2936,7 +2928,7 @@
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
 											"",
-											""
+											"console.log(responseBody);"
 										]
 									}
 								}
@@ -2997,7 +2989,6 @@
 				},
 				{
 					"name": "accounts",
-					"description": "",
 					"item": [
 						{
 							"name": "POST /api/accounts - backup",
@@ -3049,7 +3040,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
-											"",
+											"console.log(responseBody);",
 											""
 										]
 									}
@@ -3069,7 +3060,7 @@
 								],
 								"body": {},
 								"url": {
-									"raw": "{{hosts}}/api/accounts?email=prasetyanto.dheka01%2B{{$timestamp}}%40gmail.com&password=1234asdF&send_sign_in_details=true",
+									"raw": "{{hosts}}/api/accounts?email=prasetyanto.dheka02%2B{{$timestamp}}%40gmail.com&password=1234asdF&send_sign_in_details=true",
 									"host": [
 										"{{hosts}}"
 									],
@@ -3080,7 +3071,7 @@
 									"query": [
 										{
 											"key": "email",
-											"value": "prasetyanto.dheka01%2B{{$timestamp}}%40gmail.com",
+											"value": "prasetyanto.dheka02%2B{{$timestamp}}%40gmail.com",
 											"equals": true
 										},
 										{
@@ -3149,7 +3140,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
-											"",
+											"console.log(responseBody);",
 											""
 										]
 									}
@@ -3169,7 +3160,7 @@
 								],
 								"body": {},
 								"url": {
-									"raw": "{{hosts}}/api/accounts?email=prasetyanto.dheka01%2B{{$timestamp}}%40gmail.com&password=1234asdF&send_sign_in_details=true",
+									"raw": "{{hosts}}/api/accounts?email=prasetyanto.dheka02%2B{{$timestamp}}%40gmail.com&password=1234asdF&send_sign_in_details=true",
 									"host": [
 										"{{hosts}}"
 									],
@@ -3180,7 +3171,7 @@
 									"query": [
 										{
 											"key": "email",
-											"value": "prasetyanto.dheka01%2B{{$timestamp}}%40gmail.com",
+											"value": "prasetyanto.dheka02%2B{{$timestamp}}%40gmail.com",
 											"equals": true
 										},
 										{
@@ -3249,7 +3240,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
-											"",
+											"console.log(responseBody);",
 											""
 										]
 									}
@@ -3269,7 +3260,7 @@
 								],
 								"body": {},
 								"url": {
-									"raw": "{{hosts}}/api/accounts?email=prasetyanto.dheka01%2B{{$timestamp}}%40gmail.com&password=1234asdF&send_sign_in_details=true",
+									"raw": "{{hosts}}/api/accounts?email=prasetyanto.dheka02%2B{{$timestamp}}%40gmail.com&password=1234asdF&send_sign_in_details=true",
 									"host": [
 										"{{hosts}}"
 									],
@@ -3280,7 +3271,7 @@
 									"query": [
 										{
 											"key": "email",
-											"value": "prasetyanto.dheka01%2B{{$timestamp}}%40gmail.com",
+											"value": "prasetyanto.dheka02%2B{{$timestamp}}%40gmail.com",
 											"equals": true
 										},
 										{
@@ -3813,6 +3804,219 @@
 							"response": []
 						},
 						{
+							"name": "GET /api/accounts?email={email_account}",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Reseller-Token",
+										"value": "{{X-Reseller-Token}}"
+									},
+									{
+										"key": "X-Access-Token",
+										"value": "{{X-Access-Token-Backup-Statis}}"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "dme.jmeter.backup@test.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123qwe!@",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{hosts}}/api/accounts?email=bx@dropmypc.com",
+									"host": [
+										"{{hosts}}"
+									],
+									"path": [
+										"api",
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "bx@dropmypc.com",
+											"equals": true
+										}
+									]
+								},
+								"description": "Returns an array of accounts"
+							},
+							"response": []
+						},
+						{
+							"name": "PATCH /api/accounts/{id}",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 200;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 10000ms\"] = responseTime < 10000;",
+											"",
+											"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
+											"tests[\"Body matches string 'email' is \" + responseBody.has(\"email\")] = responseBody.has(\"email\");",
+											"tests[\"Body matches string 'authentication_token' is \" + responseBody.has(\"authentication_token\")] = responseBody.has(\"authentication_token\");",
+											"tests[\"Body matches string 'organization_id' is \" + responseBody.has(\"organization_id\")] = responseBody.has(\"organization_id\");",
+											"tests[\"Body matches string 'reseller_token' is \" + responseBody.has(\"reseller_token\")] = responseBody.has(\"reseller_token\");",
+											"tests[\"Body matches string 'external_id' is \" + responseBody.has(\"external_id\")] = responseBody.has(\"external_id\");",
+											"tests[\"Body matches string 'is_business' is \" + responseBody.has(\"is_business\")] = responseBody.has(\"is_business\");",
+											"tests[\"Body matches string 'admin' is \" + responseBody.has(\"admin\")] = responseBody.has(\"admin\");",
+											"tests[\"Body matches string 'customer_deactivated' is \" + responseBody.has(\"customer_deactivated\")] = responseBody.has(\"customer_deactivated\");",
+											"tests[\"Body matches string 'seats_used' is \" + responseBody.has(\"seats_used\")] = responseBody.has(\"seats_used\");",
+											"tests[\"Body matches string 'seats_available' is \" + responseBody.has(\"seats_available\")] = responseBody.has(\"seats_available\");",
+											"tests[\"Body matches string 'storage_used' is \" + responseBody.has(\"storage_used\")] = responseBody.has(\"storage_used\");",
+											"tests[\"Body matches string 'storage_available' is \" + responseBody.has(\"storage_available\")] = responseBody.has(\"storage_available\");",
+											"tests[\"Body matches string 'archive' is \" + responseBody.has(\"archive\")] = responseBody.has(\"archive\");",
+											"tests[\"Body matches string 'backup_summary' is \" + responseBody.has(\"backup_summary\")] = responseBody.has(\"backup_summary\");",
+											"tests[\"Body matches string 'login_disabled' is \" + responseBody.has(\"login_disabled\")] = responseBody.has(\"login_disabled\");",
+											"tests[\"Body matches string 'flg_suspended' is \" + responseBody.has(\"flg_suspended\")] = responseBody.has(\"flg_suspended\");",
+											"",
+											"var jsonData = JSON.parse(responseBody);",
+											"var res = typeof(jsonData) === \"object\";",
+											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; "
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "X-Reseller-Token",
+										"value": "{{X-Reseller-Token}}",
+										"description": "reseller token"
+									},
+									{
+										"key": "X-Access-Token",
+										"value": "{{X-Access-Token-Backup-Statis}}",
+										"description": "end user auth token"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "blue.box@dropmypc.com",
+											"type": "text",
+											"description": "not mandatory",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "dms12345@",
+											"type": "text",
+											"description": "not mandatory"
+										},
+										{
+											"key": "username",
+											"value": "blue.box",
+											"description": "not mandatory",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "advanced_settings",
+											"value": "1",
+											"description": "not mandatory",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "shared_mailbox",
+											"value": "1",
+											"description": "1 or 0, not mandatory",
+											"type": "text"
+										},
+										{
+											"key": "host",
+											"value": "outlook.office365.com",
+											"description": "not mandatory, related to advanced_settings.",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "port",
+											"value": "993",
+											"description": "not mandatory, related to advanced_settings.",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "o365_user_login",
+											"value": "",
+											"description": "not mandatory, related to advanced_settings.",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "shared_mailbox_login",
+											"value": "bx@dropmypc.com",
+											"description": "not mandatory, related to shared_mailbox.",
+											"type": "text"
+										},
+										{
+											"key": "shared_mailbox_type",
+											"value": "o365",
+											"description": "\"o365\" or \"cpanel\", not mandatory, related to shared_mailbox.",
+											"type": "text"
+										},
+										{
+											"key": "protocol",
+											"value": "imap",
+											"description": "not mandatory, related to advanced_settings.",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "security",
+											"value": "ssl",
+											"description": "not mandatory, related to advanced_settings.",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "oauth_token",
+											"value": "",
+											"description": "not mandatory, related to advanced_settings.",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "id",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{hosts}}/api/accounts/1195",
+									"host": [
+										"{{hosts}}"
+									],
+									"path": [
+										"api",
+										"accounts",
+										"1195"
+									]
+								},
+								"description": "Returns an array of accounts"
+							},
+							"response": []
+						},
+						{
 							"name": "PATCH /api/accounts/{id} - archiver",
 							"event": [
 								{
@@ -3820,6 +4024,7 @@
 									"script": {
 										"type": "text/javascript",
 										"exec": [
+											"",
 											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 200;",
 											"tests[\"Response time \" + responseTime + \"ms is less than 20000ms\"] = responseTime < 20000;",
 											"",
@@ -3858,7 +4063,7 @@
 											"var jsonData = JSON.parse(responseBody);",
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
-											"",
+											"console.log(responseBody);",
 											"",
 											""
 										]
@@ -3881,13 +4086,11 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"description": "",
 											"key": "email",
 											"type": "text",
 											"value": "{{Email-Account-Archiver}}"
 										},
 										{
-											"description": "",
 											"key": "password",
 											"type": "text",
 											"value": "1234asdF"
@@ -3956,7 +4159,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
-											"",
+											"console.log(responseBody);",
 											""
 										]
 									}
@@ -3978,13 +4181,11 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"description": "",
 											"key": "email",
 											"type": "text",
 											"value": "{{Email-Account-Backup}}"
 										},
 										{
-											"description": "",
 											"key": "password",
 											"type": "text",
 											"value": "1234asdF"
@@ -4053,7 +4254,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
-											"",
+											"console.log(responseBody);",
 											""
 										]
 									}
@@ -4075,13 +4276,11 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"description": "",
 											"key": "email",
 											"type": "text",
 											"value": "{{Email-Account-Personal}}"
 										},
 										{
-											"description": "",
 											"key": "password",
 											"type": "text",
 											"value": "1234asdF"
@@ -4100,6 +4299,169 @@
 									]
 								},
 								"description": "Add an email account to backup"
+							},
+							"response": []
+						},
+						{
+							"name": "02010309 - PUT /api/accounts/{id}",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 200;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 10000ms\"] = responseTime < 10000;",
+											"",
+											"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
+											"tests[\"Body matches string 'email' is \" + responseBody.has(\"email\")] = responseBody.has(\"email\");",
+											"tests[\"Body matches string 'authentication_token' is \" + responseBody.has(\"authentication_token\")] = responseBody.has(\"authentication_token\");",
+											"tests[\"Body matches string 'organization_id' is \" + responseBody.has(\"organization_id\")] = responseBody.has(\"organization_id\");",
+											"tests[\"Body matches string 'reseller_token' is \" + responseBody.has(\"reseller_token\")] = responseBody.has(\"reseller_token\");",
+											"tests[\"Body matches string 'external_id' is \" + responseBody.has(\"external_id\")] = responseBody.has(\"external_id\");",
+											"tests[\"Body matches string 'is_business' is \" + responseBody.has(\"is_business\")] = responseBody.has(\"is_business\");",
+											"tests[\"Body matches string 'admin' is \" + responseBody.has(\"admin\")] = responseBody.has(\"admin\");",
+											"tests[\"Body matches string 'customer_deactivated' is \" + responseBody.has(\"customer_deactivated\")] = responseBody.has(\"customer_deactivated\");",
+											"tests[\"Body matches string 'seats_used' is \" + responseBody.has(\"seats_used\")] = responseBody.has(\"seats_used\");",
+											"tests[\"Body matches string 'seats_available' is \" + responseBody.has(\"seats_available\")] = responseBody.has(\"seats_available\");",
+											"tests[\"Body matches string 'storage_used' is \" + responseBody.has(\"storage_used\")] = responseBody.has(\"storage_used\");",
+											"tests[\"Body matches string 'storage_available' is \" + responseBody.has(\"storage_available\")] = responseBody.has(\"storage_available\");",
+											"tests[\"Body matches string 'archive' is \" + responseBody.has(\"archive\")] = responseBody.has(\"archive\");",
+											"tests[\"Body matches string 'backup_summary' is \" + responseBody.has(\"backup_summary\")] = responseBody.has(\"backup_summary\");",
+											"tests[\"Body matches string 'login_disabled' is \" + responseBody.has(\"login_disabled\")] = responseBody.has(\"login_disabled\");",
+											"tests[\"Body matches string 'flg_suspended' is \" + responseBody.has(\"flg_suspended\")] = responseBody.has(\"flg_suspended\");",
+											"",
+											"var jsonData = JSON.parse(responseBody);",
+											"var res = typeof(jsonData) === \"object\";",
+											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; "
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "X-Reseller-Token",
+										"value": "{{X-Reseller-Token}}",
+										"description": "reseller token"
+									},
+									{
+										"key": "X-Access-Token",
+										"value": "{{X-Access-Token-Backup-Statis}}",
+										"description": "end user auth token"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "blue.box@dropmypc.com",
+											"type": "text",
+											"description": "not mandatory",
+											"disabled": true
+										},
+										{
+											"key": "password",
+											"value": "dms12345@",
+											"type": "text",
+											"description": "not mandatory"
+										},
+										{
+											"key": "username",
+											"value": "blue.box",
+											"description": "not mandatory",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "advanced_settings",
+											"value": "1",
+											"description": "not mandatory",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "shared_mailbox",
+											"value": "1",
+											"description": "1 or 0, not mandatory",
+											"type": "text"
+										},
+										{
+											"key": "host",
+											"value": "outlook.office365.com",
+											"description": "not mandatory, related to advanced_settings.",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "port",
+											"value": "993",
+											"description": "not mandatory, related to advanced_settings.",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "o365_user_login",
+											"value": "",
+											"description": "not mandatory, related to advanced_settings.",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "shared_mailbox_login",
+											"value": "bx@dropmypc.com",
+											"description": "not mandatory, related to shared_mailbox.",
+											"type": "text"
+										},
+										{
+											"key": "shared_mailbox_type",
+											"value": "o365",
+											"description": "\"o365\" or \"cpanel\", not mandatory, related to shared_mailbox.",
+											"type": "text"
+										},
+										{
+											"key": "protocol",
+											"value": "imap",
+											"description": "not mandatory, related to advanced_settings.",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "security",
+											"value": "ssl",
+											"description": "not mandatory, related to advanced_settings.",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "oauth_token",
+											"value": "",
+											"description": "not mandatory, related to advanced_settings.",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "id",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{hosts}}/api/accounts/1195",
+									"host": [
+										"{{hosts}}"
+									],
+									"path": [
+										"api",
+										"accounts",
+										"1195"
+									]
+								},
+								"description": "Returns an array of accounts"
 							},
 							"response": []
 						},
@@ -4150,7 +4512,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
-											"",
+											"console.log(responseBody);",
 											""
 										]
 									}
@@ -4232,7 +4594,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
-											"",
+											"console.log(responseBody);",
 											""
 										]
 									}
@@ -4432,7 +4794,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
-											"",
+											"console.log(responseBody);",
 											""
 										]
 									}
@@ -4514,7 +4876,7 @@
 											"var res = typeof(jsonData) === \"object\";",
 											"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
 											"",
-											"",
+											"console.log(responseBody);",
 											""
 										]
 									}
@@ -4575,7 +4937,10 @@
 										"value": "{{X-Access-Token-Backup}}"
 									}
 								],
-								"body": {},
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
 								"url": {
 									"raw": "{{hosts}}/api/accounts/{{Id-Account-Backup}}",
 									"host": [
@@ -4617,7 +4982,10 @@
 										"value": "{{X-Access-Token-Personal}}"
 									}
 								],
-								"body": {},
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
 								"url": {
 									"raw": "{{hosts}}/api/accounts/{{Id-Account-Personal}}",
 									"host": [
@@ -4756,7 +5124,6 @@
 				},
 				{
 					"name": "journals",
-					"description": "",
 					"item": [
 						{
 							"name": "GET /api/journals",
@@ -4885,7 +5252,6 @@
 											"value": "123qwe!@"
 										},
 										{
-											"description": "",
 											"key": "id",
 											"type": "text",
 											"value": "{{Id-Journal}}"
@@ -4959,7 +5325,6 @@
 		},
 		{
 			"name": "Delete Users",
-			"description": "",
 			"item": [
 				{
 					"name": "DELETE /api/users/{id}/immediate_delete - personal",
@@ -4987,7 +5352,10 @@
 								"value": "{{X-Access-Token-Reseller}}"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{hosts}}/api/users/{{Id-User-Personal}}/immediate_delete",
 							"host": [
