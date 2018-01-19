@@ -3003,7 +3003,7 @@
 											"postman.setEnvironmentVariable(\"Email-Account-Backup\", jsonData.email);",
 											"",
 											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 201;",
-											"tests[\"Response time \" + responseTime + \"ms is less than 25000ms\"] = responseTime < 25000;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 20000ms\"] = responseTime < 20000;",
 											"",
 											"",
 											"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
@@ -3103,7 +3103,7 @@
 											"postman.setEnvironmentVariable(\"Email-Account-Archiver\", jsonData.email);",
 											"",
 											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 201;",
-											"tests[\"Response time \" + responseTime + \"ms is less than 25000ms\"] = responseTime < 25000;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 20000ms\"] = responseTime < 20000;",
 											"",
 											"",
 											"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
@@ -3203,7 +3203,7 @@
 											"postman.setEnvironmentVariable(\"Email-Account-Personal\", jsonData.email);",
 											"",
 											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 201;",
-											"tests[\"Response time \" + responseTime + \"ms is less than 25000ms\"] = responseTime < 25000;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 20000ms\"] = responseTime < 20000;",
 											"",
 											"",
 											"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
@@ -4026,7 +4026,7 @@
 										"exec": [
 											"",
 											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 200;",
-											"tests[\"Response time \" + responseTime + \"ms is less than 25000ms\"] = responseTime < 25000;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 20000ms\"] = responseTime < 20000;",
 											"",
 											"",
 											"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
@@ -4121,7 +4121,7 @@
 										"type": "text/javascript",
 										"exec": [
 											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 200;",
-											"tests[\"Response time \" + responseTime + \"ms is less than 25000ms\"] = responseTime < 25000;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 20000ms\"] = responseTime < 20000;",
 											"",
 											"",
 											"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
@@ -4216,7 +4216,7 @@
 										"type": "text/javascript",
 										"exec": [
 											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 200;",
-											"tests[\"Response time \" + responseTime + \"ms is less than 25000ms\"] = responseTime < 25000;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 20000ms\"] = responseTime < 20000;",
 											"",
 											"",
 											"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
@@ -4474,7 +4474,7 @@
 										"type": "text/javascript",
 										"exec": [
 											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 200;",
-											"tests[\"Response time \" + responseTime + \"ms is less than 20000ms\"] = responseTime < 15000;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 20000ms\"] = responseTime < 20000;",
 											"",
 											"",
 											"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
@@ -4556,7 +4556,7 @@
 										"type": "text/javascript",
 										"exec": [
 											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 200;",
-											"tests[\"Response time \" + responseTime + \"ms is less than 20000ms\"] = responseTime < 15000;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 20000ms\"] = responseTime < 20000;",
 											"",
 											"",
 											"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
@@ -4756,7 +4756,7 @@
 										"type": "text/javascript",
 										"exec": [
 											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 200;",
-											"tests[\"Response time \" + responseTime + \"ms is less than 20000ms\"] = responseTime < 15000;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 20000ms\"] = responseTime < 20000;",
 											"",
 											"",
 											"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
@@ -4838,7 +4838,7 @@
 										"type": "text/javascript",
 										"exec": [
 											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 200;",
-											"tests[\"Response time \" + responseTime + \"ms is less than 20000ms\"] = responseTime < 15000;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 20000ms\"] = responseTime < 20000;",
 											"",
 											"",
 											"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
@@ -5324,151 +5324,8 @@
 			]
 		},
 		{
-			"name": "Delete Users & Account",
+			"name": "Delete Users",
 			"item": [
-				{
-					"name": "POST /api/accounts - personal for delete",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"var jsonData = JSON.parse(responseBody);",
-									"postman.setEnvironmentVariable(\"Id-Account-Personal\", jsonData.id);",
-									"postman.setEnvironmentVariable(\"Email-Account-Personal\", jsonData.email);",
-									"",
-									"tests[\"Status code is \" + responseCode.code] = responseCode.code === 201;",
-									"tests[\"Response time \" + responseTime + \"ms is less than 25000ms\"] = responseTime < 25000;",
-									"",
-									"",
-									"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
-									"tests[\"Body matches string 'last_backup' is \" + responseBody.has(\"last_backup\")] = responseBody.has(\"last_backup\");",
-									"tests[\"Body matches string 'deactivated_since' is \" + responseBody.has(\"deactivated_since\")] = responseBody.has(\"deactivated_since\");",
-									"tests[\"Body matches string 'email' is \" + responseBody.has(\"email\")] = responseBody.has(\"email\");",
-									"tests[\"Body matches string 'username' is \" + responseBody.has(\"username\")] = responseBody.has(\"username\");",
-									"tests[\"Body matches string 'storage' is \" + responseBody.has(\"storage\")] = responseBody.has(\"storage\");",
-									"tests[\"Body matches string 'msg_count' is \" + responseBody.has(\"msg_count\")] = responseBody.has(\"msg_count\");",
-									"tests[\"Body matches string 'flg_deleted' is \" + responseBody.has(\"flg_deleted\")] = responseBody.has(\"flg_deleted\");",
-									"tests[\"Body matches string 'errors' is \" + responseBody.has(\"errors\")] = responseBody.has(\"errors\");",
-									"tests[\"Body matches string 'user' is \" + responseBody.has(\"user\")] = responseBody.has(\"user\");",
-									"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
-									"tests[\"Body matches string 'email' is \" + responseBody.has(\"email\")] = responseBody.has(\"email\");",
-									"tests[\"Body matches string 'authentication_token' is \" + responseBody.has(\"authentication_token\")] = responseBody.has(\"authentication_token\");",
-									"tests[\"Body matches string 'organization_id' is \" + responseBody.has(\"organization_id\")] = responseBody.has(\"organization_id\");",
-									"tests[\"Body matches string 'reseller_token' is \" + responseBody.has(\"reseller_token\")] = responseBody.has(\"reseller_token\");",
-									"tests[\"Body matches string 'external_id' is \" + responseBody.has(\"external_id\")] = responseBody.has(\"external_id\");",
-									"tests[\"Body matches string 'is_business' is \" + responseBody.has(\"is_business\")] = responseBody.has(\"is_business\");",
-									"tests[\"Body matches string 'admin' is \" + responseBody.has(\"admin\")] = responseBody.has(\"admin\");",
-									"tests[\"Body matches string 'customer_deactivated' is \" + responseBody.has(\"customer_deactivated\")] = responseBody.has(\"customer_deactivated\");",
-									"tests[\"Body matches string 'seats_used' is \" + responseBody.has(\"seats_used\")] = responseBody.has(\"seats_used\");",
-									"tests[\"Body matches string 'seats_available' is \" + responseBody.has(\"seats_available\")] = responseBody.has(\"seats_available\");",
-									"tests[\"Body matches string 'storage_used' is \" + responseBody.has(\"storage_used\")] = responseBody.has(\"storage_used\");",
-									"tests[\"Body matches string 'storage_available' is \" + responseBody.has(\"storage_available\")] = responseBody.has(\"storage_available\");",
-									"tests[\"Body matches string 'archive' is \" + responseBody.has(\"archive\")] = responseBody.has(\"archive\");",
-									"tests[\"Body matches string 'organization_id' is \" + responseBody.has(\"organization_id\")] = responseBody.has(\"organization_id\");",
-									"tests[\"Body matches string 'backup_summary' is \" + responseBody.has(\"backup_summary\")] = responseBody.has(\"backup_summary\");",
-									"tests[\"Body matches string 'login_disabled' is \" + responseBody.has(\"login_disabled\")] = responseBody.has(\"login_disabled\");",
-									"tests[\"Body matches string 'flg_suspended' is \" + responseBody.has(\"flg_suspended\")] = responseBody.has(\"flg_suspended\");",
-									"",
-									"",
-									"var jsonData = JSON.parse(responseBody);",
-									"var res = typeof(jsonData) === \"object\";",
-									"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; ",
-									"",
-									"console.log(responseBody);",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "X-Reseller-Token",
-								"value": "{{X-Reseller-Token}}"
-							},
-							{
-								"key": "X-Access-Token",
-								"value": "{{X-Access-Token-Personal}}"
-							}
-						],
-						"body": {},
-						"url": {
-							"raw": "{{hosts}}/api/accounts?email=prasetyanto.dheka02%2B{{$timestamp}}%40gmail.com&password=1234asdF&send_sign_in_details=true",
-							"host": [
-								"{{hosts}}"
-							],
-							"path": [
-								"api",
-								"accounts"
-							],
-							"query": [
-								{
-									"key": "email",
-									"value": "prasetyanto.dheka02%2B{{$timestamp}}%40gmail.com",
-									"equals": true
-								},
-								{
-									"key": "password",
-									"value": "1234asdF",
-									"equals": true
-								},
-								{
-									"key": "send_sign_in_details",
-									"value": "true",
-									"equals": true
-								}
-							]
-						},
-						"description": "Add an email account to backup"
-					},
-					"response": []
-				},
-				{
-					"name": "DELETE /api/account/{id}/immediate_delete - personal copy",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"tests[\"Status code is \" + responseCode.code] = responseCode.code === 204;",
-									"tests[\"Response time \" + responseTime + \"ms is less than 20000ms\"] = responseTime < 20000;"
-								]
-							}
-						}
-					],
-					"request": {
-						"method": "DELETE",
-						"header": [
-							{
-								"key": "X-Reseller-Token",
-								"value": "{{X-Reseller-Token}}"
-							},
-							{
-								"key": "X-Access-Token",
-								"value": "{{X-Access-Token-Personal}}"
-							}
-						],
-						"body": {},
-						"url": {
-							"raw": "{{hosts}}/api/account/{{Id-Account-Personal}}/immediate_delete",
-							"host": [
-								"{{hosts}}"
-							],
-							"path": [
-								"api",
-								"account",
-								"{{Id-Account-Personal}}",
-								"immediate_delete"
-							]
-						},
-						"description": "unsubscribe a user."
-					},
-					"response": []
-				},
 				{
 					"name": "DELETE /api/users/{id}/immediate_delete - personal",
 					"event": [
@@ -5516,188 +5373,6 @@
 					"response": []
 				}
 			]
-		},
-		{
-			"name": "GET /api/status",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							"// Test whether the response status code is correct value",
-							"tests[\"Status code is 200\"] = responseCode.code === 200;",
-							"",
-							"tests[\"Response time \" + responseTime + \" ms is less than 20000 ms.\"] = responseTime < 20000;",
-							""
-						]
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "X-Reseller-Token",
-						"value": "{{X-Reseller-Token}}"
-					}
-				],
-				"body": {},
-				"url": {
-					"raw": "{{hosts}}/api/status",
-					"host": [
-						"{{hosts}}"
-					],
-					"path": [
-						"api",
-						"status"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET /api/boom",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							"// Test whether the response status code is correct value",
-							"tests[\"Status code is 500\"] = responseCode.code === 500;",
-							"",
-							"tests[\"Response time \" + responseTime + \" ms is less than 20000 ms.\"] = responseTime < 20000;",
-							"",
-							"// The Content-Type must be JSON",
-							"tests[\"Content-Type header is JSON\"] = postman.getResponseHeader(\"Content-Type\") === \"application/json\";",
-							"",
-							"var data = JSON.parse(responseBody);",
-							"  tests[\"Response has an errors message\"] = data.errors !== undefined;",
-							"",
-							"// Define the JSON Schema",
-							"const responseSchema = {",
-							"  \"errors\": {",
-							"        \"System\": [",
-							"            \"Internal Server Error\"",
-							"        ]",
-							"    }",
-							"};",
-							"",
-							"// Test whether the response matches the schema",
-							"var response = JSON.parse(responseBody);",
-							"tests[\"Response content is valid\"] = tv4.validate(response, responseSchema);",
-							"",
-							""
-						]
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "X-Reseller-Token",
-						"value": "{{X-Reseller-Token}}"
-					}
-				],
-				"body": {},
-				"url": {
-					"raw": "{{hosts}}/api/boom",
-					"host": [
-						"{{hosts}}"
-					],
-					"path": [
-						"api",
-						"boom"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET /api/accounts/connection_failures",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							"tests[\"Status code is \" + responseCode.code] = responseCode.code === 200;",
-							"",
-							"tests[\"Response time \" + responseTime + \" ms is less than 20000 ms\"] = responseTime < 20000;",
-							"",
-							"/*tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
-							"tests[\"Body matches string 'email' is \" + responseBody.has(\"email\")] = responseBody.has(\"email\");",
-							"tests[\"Body matches string 'protocol' is \" + responseBody.has(\"protocol\")] = responseBody.has(\"protocol\");",
-							"tests[\"Body matches string 'username' is \" + responseBody.has(\"username\")] = responseBody.has(\"username\");",
-							"tests[\"Body matches string 'flg_deleted' is \" + responseBody.has(\"flg_deleted\")] = responseBody.has(\"flg_deleted\");",
-							"tests[\"Body matches string 'user_id' is \" + responseBody.has(\"user_id\")] = responseBody.has(\"user_id\");",
-							"tests[\"Body matches string 'office365_request_id' is \" + responseBody.has(\"office365_request_id\")] = responseBody.has(\"office365_request_id\");",
-							"tests[\"Body matches string 'hosted_exchange_request_id' is \" + responseBody.has(\"hosted_exchange_request_id\")] = responseBody.has(\"hosted_exchange_request_id\");",
-							"tests[\"Body matches string 'owner_login' is \" + responseBody.has(\"owner_login\")] = responseBody.has(\"owner_login\");",
-							"tests[\"Body matches string 'shared' is \" + responseBody.has(\"shared\")] = responseBody.has(\"shared\");",
-							"tests[\"Body matches string 'msp' is \" + responseBody.has(\"msp\")] = responseBody.has(\"msp\");",
-							"*/",
-							"tests[\"Body matches string 'current_page' is \" + responseBody.has(\"current_page\")] = responseBody.has(\"current_page\");",
-							"tests[\"Body matches string 'per_page' is \" + responseBody.has(\"per_page\")] = responseBody.has(\"per_page\");",
-							"tests[\"Body matches string 'total_entries' is \" + responseBody.has(\"total_entries\")] = responseBody.has(\"total_entries\");",
-							"tests[\"Body matches string 'total_pages' is \" + responseBody.has(\"total_pages\")] = responseBody.has(\"total_pages\");",
-							"tests[\"Body matches string 'api_version' is \" + responseBody.has(\"api_version\")] = responseBody.has(\"api_version\");",
-							"",
-							""
-						]
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "X-Reseller-Token",
-						"value": "{{X-Reseller-Token}}"
-					},
-					{
-						"key": "X-Access-Token",
-						"value": "{{X-Access-Token-Reseller}}"
-					}
-				],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "email",
-							"value": "dme.jmeter.backup@test.com",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "123qwe!@",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "{{hosts}}/api/accounts/connection_failures?page=1",
-					"host": [
-						"{{hosts}}"
-					],
-					"path": [
-						"api",
-						"accounts",
-						"connection_failures"
-					],
-					"query": [
-						{
-							"key": "page",
-							"value": "1",
-							"equals": true
-						}
-					]
-				},
-				"description": "Returns an array of accounts"
-			},
-			"response": []
 		}
 	]
 }
