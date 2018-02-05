@@ -10,7 +10,7 @@
 			"name": "Countries, Timezones, Locales",
 			"item": [
 				{
-					"name": "02010101- GET /api/countries",
+					"name": "GET /api/countries",
 					"event": [
 						{
 							"listen": "test",
@@ -21,13 +21,37 @@
 									"tests[\"Response time \" + responseTime + \"ms is less than 20000ms\"] = responseTime < 20000;",
 									"",
 									"",
+									"/*var jsonData = JSON.parse(responseBody);",
+									"",
+									"var schema = {",
+									"  \"properties\": {",
+									"    ",
+									"    \"country_code\": {",
+									"      \"type\": \"string\"",
+									"    },",
+									"    \"country_name\": {",
+									"      \"type\": \"string\"",
+									"    }",
+									"  },",
+									"  \"required\": [\"id\", \"country_code\", \"country_name\"]",
+									"};",
+									"",
+									"var postIDs =[];",
+									"",
+									"jsonData.forEach(function(post) {",
+									"    var testTitle = \"country code \" + post.country_code + \" conforms to schema\";",
+									"    //postIDs.push(post);",
+									"    tests[testTitle] = tv4.validate(post, schema);",
+									"});",
+									"*/",
+									"",
 									"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
 									"tests[\"Body matches string 'country_code' is \" + responseBody.has(\"country_code\")] = responseBody.has(\"country_code\");",
 									"tests[\"Body matches string 'country_name' is \" + responseBody.has(\"country_name\")] = responseBody.has(\"country_name\");",
 									"",
 									"var jsonData = JSON.parse(responseBody);",
 									"var res = typeof(jsonData) === \"object\";",
-									"tests[\"Type data of '\" + jsonData + \"' is Object : \" + res] = res; "
+									""
 								]
 							}
 						}
@@ -40,10 +64,7 @@
 								"value": "{{X-Reseller-Token}}"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "{{hosts}}/api/countries",
 							"host": [
@@ -59,7 +80,7 @@
 					"response": []
 				},
 				{
-					"name": "02010102- GET /api/timezones",
+					"name": "GET /api/timezones",
 					"event": [
 						{
 							"listen": "test",
@@ -107,7 +128,7 @@
 					"response": []
 				},
 				{
-					"name": "02010103 - GET /api/locales",
+					"name": "GET /api/locales",
 					"event": [
 						{
 							"listen": "test",
@@ -2520,6 +2541,65 @@
 							"response": []
 						},
 						{
+							"name": "POST /api/users/get_token - backup statis",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 201;",
+											"",
+											"tests[\"Response time \" + responseTime + \"ms is less than 20000ms\"] = responseTime < 20000;",
+											"",
+											"tests[\"Body matches string 'authentication' is \" + responseBody.has(\"authentication_token\")] = responseBody.has(\"authentication_token\");",
+											"",
+											"var jsonData = JSON.parse(responseBody);",
+											"postman.setEnvironmentVariable(\"X-Access-Token-Backup-Statis\", jsonData.authentication_token);",
+											"console.log(responseBody);"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-Reseller-Token",
+										"value": "{{X-Reseller-Token-1}}"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"type": "text",
+											"value": "impersonation.backup@email.com"
+										},
+										{
+											"key": "password",
+											"type": "text",
+											"value": "123123123"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{hosts}}/api/users/get_token",
+									"host": [
+										"{{hosts}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"get_token"
+									]
+								},
+								"description": "Generate single sign on link"
+							},
+							"response": []
+						},
+						{
 							"name": "GET /api/users/generate_redirect_link - archiver",
 							"event": [
 								{
@@ -2670,6 +2750,67 @@
 									{
 										"key": "X-Access-Token",
 										"value": "{{X-Access-Token-Backup}}"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"type": "text",
+											"value": "dme.jmeter.backup@test.com"
+										},
+										{
+											"key": "password",
+											"type": "text",
+											"value": "123qwe!@"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{hosts}}/api/users/generate_redirect_link",
+									"host": [
+										"{{hosts}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"generate_redirect_link"
+									]
+								},
+								"description": "Generate single sign on link"
+							},
+							"response": []
+						},
+						{
+							"name": "GET /api/users/generate_redirect_link - backup statis",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 200;",
+											"",
+											"tests[\"Response time \" + responseTime + \"ms is less than 20000ms\"] = responseTime < 20000;",
+											"",
+											"tests[\"Body matches string 'redirect_url' is \" + responseBody.has(\"redirect_url\")] = responseBody.has(\"redirect_url\");",
+											"",
+											"console.log(responseBody);"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Reseller-Token",
+										"value": "{{X-Reseller-Token-1}}"
+									},
+									{
+										"key": "X-Access-Token",
+										"value": "{{X-Access-Token-Backup-Statis}}"
 									}
 								],
 								"body": {
@@ -3003,7 +3144,7 @@
 											"postman.setEnvironmentVariable(\"Email-Account-Backup\", jsonData.email);",
 											"",
 											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 201;",
-											"tests[\"Response time \" + responseTime + \"ms is less than 25000ms\"] = responseTime < 25000;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 30000ms\"] = responseTime < 30000;",
 											"",
 											"",
 											"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
@@ -3103,7 +3244,7 @@
 											"postman.setEnvironmentVariable(\"Email-Account-Archiver\", jsonData.email);",
 											"",
 											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 201;",
-											"tests[\"Response time \" + responseTime + \"ms is less than 25000ms\"] = responseTime < 25000;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 30000ms\"] = responseTime < 30000;",
 											"",
 											"",
 											"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
@@ -3203,7 +3344,7 @@
 											"postman.setEnvironmentVariable(\"Email-Account-Personal\", jsonData.email);",
 											"",
 											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 201;",
-											"tests[\"Response time \" + responseTime + \"ms is less than 25000ms\"] = responseTime < 25000;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 30000ms\"] = responseTime < 30000;",
 											"",
 											"",
 											"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
@@ -3359,13 +3500,20 @@
 									]
 								},
 								"url": {
-									"raw": "{{hosts}}/api/accounts",
+									"raw": "{{hosts}}/api/accounts?page=1",
 									"host": [
 										"{{hosts}}"
 									],
 									"path": [
 										"api",
 										"accounts"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"equals": true
+										}
 									]
 								},
 								"description": "Returns an array of accounts"
@@ -3533,6 +3681,186 @@
 									]
 								},
 								"description": "Returns an array of accounts"
+							},
+							"response": []
+						},
+						{
+							"name": "GET /api/accounts?page=1 - backup statis",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);",
+											"",
+											"var schema = {",
+											"  \"properties\": {",
+											"    \"id\": {",
+											"      \"type\": \"integer\"",
+											"    },",
+											"    \"email\": {",
+											"      \"type\": \"string\"",
+											"    }",
+											"  },",
+											"  \"required\": [\"id\", \"email\"]",
+											"};",
+											"",
+											"var postIDs =[];",
+											"",
+											"jsonData.result_set.forEach(function(post) {",
+											"    var testTitle = \"id\" + post.id + \" conforms to schema\";",
+											"    postIDs.push(post.id);",
+											"    tests[testTitle] = tv4.validate(post, schema);",
+											"});",
+											"",
+											"postman.setEnvironmentVariable('IDs', JSON.stringify(postIDs));",
+											"postman.setEnvironmentVariable('count', 1+1);",
+											"",
+											"postman.setNextRequest(\"GET /api/accounts?page={{count}} - backup statis\");",
+											"//console.log(postIDs)"
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Reseller-Token",
+										"value": "{{X-Reseller-Token-1}}"
+									},
+									{
+										"key": "X-Access-Token",
+										"value": "{{X-Access-Token-Backup-Statis}}"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "{{hosts}}/api/accounts?page=1",
+									"host": [
+										"{{hosts}}"
+									],
+									"path": [
+										"api",
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"equals": true
+										}
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "GET /api/accounts?page={{count}} - backup statis",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);",
+											"",
+											"var schema = {",
+											"  \"properties\": {",
+											"    \"id\": {",
+											"      \"type\": \"integer\"",
+											"    },",
+											"    \"email\": {",
+											"      \"type\": \"string\"",
+											"    }",
+											"  },",
+											"  \"required\": [\"id\", \"email\"]",
+											"};",
+											"",
+											"var keys = Object.keys(jsonData.result_set);",
+											"var test = jsonData.result_set.id",
+											"var ids = pm.environment.get(\"IDs\");",
+											"var x = ids.replace(\"[\", \"\").replace(\"]\",\"\").replace(/[\"']/g, \"\").split(\",\")",
+											"//i = 0",
+											"var postIDs = [];",
+											"//for(i = 0; i < Object.size(jsonData.result_set); i++) {",
+											"    jsonData.result_set.forEach(function(post) {",
+											"        //var i = JSON.stringify(ids)",
+											"        //idss = ids.shift()",
+											"        var testTitle = \"id \" + post.id + \" conforms to schema\";",
+											"        //tests[\"new id \" +  post.id + \" != latest id \"+ x[i]] = jsonData.id = x[i];",
+											"        tests[testTitle] = tv4.validate(post, schema);",
+											"        i = i + 1;",
+											"        postIDs.push(post.id);",
+											"    });",
+											"//}",
+											"",
+											"var sum = Object.size(jsonData.result_set)",
+											"var y = JSON.stringify(postIDs)",
+											"var arrayy = y.replace(\"[\", \"\").replace(\"]\",\"\").split(\",\")",
+											"var xy = x.concat(arrayy);",
+											"if (sum >= 20){",
+											"    var page = pm.environment.get(\"count\");",
+											"    postman.setEnvironmentVariable('IDs', JSON.stringify(xy));",
+											"    postman.setEnvironmentVariable('count', Number(page) + 1);",
+											"    postman.setNextRequest(\"GET /api/accounts?page={{count}} - backup statis\");",
+											"}else {",
+											"    var sorted_arr = xy.slice().sort();",
+											"    var double = [];",
+											"    for (var i = 0; i < sorted_arr.length - 1; i++) {",
+											"        if (sorted_arr[i + 1] == sorted_arr[i]) {",
+											"            double.push(sorted_arr[i]);",
+											"        }",
+											"    }",
+											"    console.log(double)",
+											"        if (double.length === 0){",
+											"            tests[\"there's no double id\"] = true;",
+											"        }else{",
+											"            tests[\"there's double id\"] = false;",
+											"        }",
+											"    ",
+											"   // postman.clearEnvironmentVariable('count');",
+											"   // postman.clearEnvironmentVariable('IDs');",
+											"}",
+											"",
+											""
+										]
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-Reseller-Token",
+										"value": "{{X-Reseller-Token-1}}"
+									},
+									{
+										"key": "X-Access-Token",
+										"value": "{{X-Access-Token-Backup-Statis}}"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "{{hosts}}/api/accounts?page={{count}}",
+									"host": [
+										"{{hosts}}"
+									],
+									"path": [
+										"api",
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "{{count}}",
+											"equals": true
+										}
+									]
+								},
+								"description": ""
 							},
 							"response": []
 						},
@@ -3854,7 +4182,7 @@
 							"response": []
 						},
 						{
-							"name": "PATCH /api/accounts/{id}",
+							"name": "PATCH /api/accounts/{id} - backup statis o365",
 							"event": [
 								{
 									"listen": "test",
@@ -3894,7 +4222,7 @@
 								"header": [
 									{
 										"key": "X-Reseller-Token",
-										"value": "{{X-Reseller-Token}}",
+										"value": "{{X-Reseller-Token-1}}",
 										"description": "reseller token"
 									},
 									{
@@ -3962,7 +4290,7 @@
 										},
 										{
 											"key": "shared_mailbox_login",
-											"value": "bx@dropmypc.com",
+											"value": "bd@dropmypc.com",
 											"description": "not mandatory, related to shared_mailbox.",
 											"type": "text"
 										},
@@ -4002,14 +4330,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{hosts}}/api/accounts/1195",
+									"raw": "{{hosts}}/api/accounts/738",
 									"host": [
 										"{{hosts}}"
 									],
 									"path": [
 										"api",
 										"accounts",
-										"1195"
+										"738"
 									]
 								},
 								"description": "Returns an array of accounts"
@@ -4026,7 +4354,7 @@
 										"exec": [
 											"",
 											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 200;",
-											"tests[\"Response time \" + responseTime + \"ms is less than 25000ms\"] = responseTime < 25000;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 30000ms\"] = responseTime < 30000;",
 											"",
 											"",
 											"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
@@ -4121,7 +4449,7 @@
 										"type": "text/javascript",
 										"exec": [
 											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 200;",
-											"tests[\"Response time \" + responseTime + \"ms is less than 25000ms\"] = responseTime < 25000;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 30000ms\"] = responseTime < 30000;",
 											"",
 											"",
 											"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
@@ -4216,7 +4544,7 @@
 										"type": "text/javascript",
 										"exec": [
 											"tests[\"Status code is \" + responseCode.code] = responseCode.code === 200;",
-											"tests[\"Response time \" + responseTime + \"ms is less than 25000ms\"] = responseTime < 25000;",
+											"tests[\"Response time \" + responseTime + \"ms is less than 30000ms\"] = responseTime < 30000;",
 											"",
 											"",
 											"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
@@ -4303,7 +4631,7 @@
 							"response": []
 						},
 						{
-							"name": "02010309 - PUT /api/accounts/{id}",
+							"name": "PUT /api/accounts/{id} - backup statis o365",
 							"event": [
 								{
 									"listen": "test",
@@ -4343,7 +4671,7 @@
 								"header": [
 									{
 										"key": "X-Reseller-Token",
-										"value": "{{X-Reseller-Token}}",
+										"value": "{{X-Reseller-Token-1}}",
 										"description": "reseller token"
 									},
 									{
@@ -4411,7 +4739,7 @@
 										},
 										{
 											"key": "shared_mailbox_login",
-											"value": "bx@dropmypc.com",
+											"value": "bd@dropmypc.com",
 											"description": "not mandatory, related to shared_mailbox.",
 											"type": "text"
 										},
@@ -4451,14 +4779,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{hosts}}/api/accounts/1195",
+									"raw": "{{hosts}}/api/accounts/738",
 									"host": [
 										"{{hosts}}"
 									],
 									"path": [
 										"api",
 										"accounts",
-										"1195"
+										"738"
 									]
 								},
 								"description": "Returns an array of accounts"
@@ -5339,7 +5667,7 @@
 									"postman.setEnvironmentVariable(\"Email-Account-Personal\", jsonData.email);",
 									"",
 									"tests[\"Status code is \" + responseCode.code] = responseCode.code === 201;",
-									"tests[\"Response time \" + responseTime + \"ms is less than 25000ms\"] = responseTime < 25000;",
+									"tests[\"Response time \" + responseTime + \"ms is less than 30000ms\"] = responseTime < 30000;",
 									"",
 									"",
 									"tests[\"Body matches string 'id' is \" + responseBody.has(\"id\")] = responseBody.has(\"id\");",
@@ -5427,7 +5755,7 @@
 					"response": []
 				},
 				{
-					"name": "DELETE /api/account/{id}/immediate_delete - personal copy",
+					"name": "DELETE /api/account/{id}/immediate_delete - personal",
 					"event": [
 						{
 							"listen": "test",
